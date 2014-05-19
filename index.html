@@ -1,11 +1,32 @@
 <html>
 <head></head>
 <body>
-<form>
-Value of X: <input name="number_x" type="number" step="0.1" /><br/>
-Value of Y: <input name="number_y" type="number" step="0.1" /><br/>
-Value of Z: <input name="number_z" type="number" step="0.1" /><br/>
+<form id ="insert" onsubmit="calculate();">
+Value of X: <input id="number_x" type="number" step="0.1" /><br/>
+Value of Y: <input id="number_y" type="number" step="0.1" /><br/>
+Value of Z: <input id="number_z" type="number" step="0.1" /><br/>
 <input type="submit" value="Calculate!" />
 </form>
+
+<p id="demo"></p>
+
+<script>
+function calculate() {
+	var num_x = document.getElementById("number_x").value;
+	var num_y = document.getElementById("number_y").value;
+	var num_z = document.getElementById("number_z").value;
+	var x = parseFloat(num_x);
+    var y = parseFloat(num_y);
+    var z = parseFloat(num_z);
+	var helper1 = x - y;
+	var helper2 = helper1 / z;
+    var answer = 10 * helper2;
+
+	
+	alert("The answer is " + answer + ".");
+
+}
+</script>
+
 </body>
 </html>
