@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.trainingpartners.xyzxyzxyz"
+        versionCode = "10" 
+        version     = "0.0.1" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>XYZ Prototype</name>
+
+    <description>
+        Prototype for XYZ. 
+    </description>
+
+    <author href="http://www.training-partners.com" email="chuan-zhi.kao@training-partners.com">
+        Chuan-Zhi Kao
+    </author>
+
+</widget>
