@@ -8,11 +8,11 @@
 <div id="loginform">
 
 <h1>Input values of X, Y and Z.</h1>
-<form id ="insert" onsubmit="calculate();">
+<form id ="insert" onsubmit="return calculate();">
 <input type="number" id="number_x" placeholder="X" value="" step="any" required>
 <input type="number" id="number_y" placeholder="Y" value="" step="any" required>
 <input type="number" id="number_z" placeholder="Z" value="" step="any" required>
-<button type="submit"><font size="7"><b>></b></font></button>
+<button type="submit">></font></button>
 </form>
 
 <p id="demo"></p>
@@ -38,6 +38,7 @@ function calculate() {
 		var answer = 10 * ((x - y) / z);
 		answer = +answer.toFixed(8);
 		alert("The answer is " + answer + ".");
+		return false;
 	} else {
 		alert("Invalid input(s)!");
 		return false;
