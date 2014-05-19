@@ -1,30 +1,47 @@
 <html>
-<head></head>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
 <body>
+
+
+<div id="loginform">
+
+<h1>Input values of X, Y and Z.</h1>
 <form id ="insert" onsubmit="calculate();">
-Value of X: <input id="number_x" type="number" step="0.1" /><br/>
-Value of Y: <input id="number_y" type="number" step="0.1" /><br/>
-Value of Z: <input id="number_z" type="number" step="0.1" /><br/>
-<input type="submit" value="Calculate!" />
+<input type="number" id="number_x" placeholder="X" value="" step="any" required>
+<input type="number" id="number_y" placeholder="Y" value="" step="any" required>
+<input type="number" id="number_z" placeholder="Z" value="" step="any" required>
+<button type="submit"><font size="6"><b>></b></font></button>
 </form>
 
 <p id="demo"></p>
 
 <script>
+
+
 function calculate() {
+	
 	var num_x = document.getElementById("number_x").value;
 	var num_y = document.getElementById("number_y").value;
 	var num_z = document.getElementById("number_z").value;
-	var x = parseFloat(num_x);
-    var y = parseFloat(num_y);
-    var z = parseFloat(num_z);
-	var helper1 = x - y;
-	var helper2 = helper1 / z;
-    var answer = 10 * helper2;
-
 	
-	alert("The answer is " + answer + ".");
-
+	if (num_z == 0) {
+		alert("Value of Z must not be zero!");
+		return false;
+	}
+	
+	else if ((!isNaN(parseFloat(num_x)) && isFinite(num_x)) && (!isNaN(parseFloat(num_y)) && isFinite(num_y)) && (!isNaN(parseFloat(num_z)) && isFinite(num_z))) {
+		var x = parseFloat(num_x * 10);
+		var y = parseFloat(num_y * 10);
+		var z = parseFloat(num_z * 10);
+		var answer = 10 * ((x - y) / z);
+		answer = +answer.toFixed(8);
+		alert("The answer is " + answer + ".");
+	} else {
+		alert("Invalid input(s)!");
+		return false;
+	}
 }
 </script>
 
